@@ -1,6 +1,6 @@
 fn main() {
     let mut x = 5;
-    println!("The value of x is: {}", x);     // xの値は{}です
+    println!("The value of x is: {}", x); // xの値は{}です
     x = 6;
     println!("The value of x is: {}", x);
 
@@ -11,7 +11,7 @@ fn main() {
         Err(_) => {
             println!("Not number");
             return;
-        },
+        }
     };
     println!("{} da, {}", guess, data);
     print_month(11);
@@ -28,10 +28,21 @@ fn main() {
 }
 
 fn print_month(index: usize) {
-    let months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
     println!("{}", months[index])
-
 }
 
 struct User {
@@ -51,6 +62,8 @@ fn build_user(username: String, email: String) -> User {
 }
 
 fn print_user_info(user: &User) {
-    println!("username: {},
-     email:{} ({}) - {}", user.username, user.email, user.active, user.sign_in_count);
+    println!(
+        "username: {}, email:{} ({}) - {}",
+        user.username, user.email, user.active, user.sign_in_count
+    );
 }
