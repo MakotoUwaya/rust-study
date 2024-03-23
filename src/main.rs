@@ -25,6 +25,8 @@ fn main() {
         ..user1
     };
     print_user_info(&user2);
+
+    calc_rectangle();
 }
 
 fn print_month(index: usize) {
@@ -66,4 +68,27 @@ fn print_user_info(user: &User) {
         "username: {}, email:{} ({}) - {}",
         user.username, user.email, user.active, user.sign_in_count
     );
+}
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn calc_rectangle() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    println!("rect1 is {:?}", rect1);
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(&rect1)
+    );
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
 }
