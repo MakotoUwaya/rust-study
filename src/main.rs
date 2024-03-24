@@ -1,5 +1,5 @@
 mod simple;
 
 fn main() {
-    simple::message::using_message();
+    simple::option::using_option();
 }
