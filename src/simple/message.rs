@@ -20,8 +20,25 @@ enum Message {
 
 impl Message {
     fn call(&self) {
-        // method body would be defined here
-        // メソッド本体はここに定義される
-        println!("Message some instance called: {:?}", &self);
+        match &self {
+            Message::Quit => {
+                println!("Message some instance called: {:?}", &self);
+            }
+            Message::Move {
+                x: self_x,
+                y: self_y,
+            } => {
+                println!("Message some instance called: x: {}, y: {}", self_x, self_y);
+            }
+            Message::Write(value) => {
+                println!("Message some instance called(Write): value: {}", value);
+            }
+            Message::ChangeColor(r, g, b) => {
+                println!(
+                    "Message some instance called(Write): r: {}, g: {}, b: {}",
+                    r, g, b
+                );
+            }
+        }
     }
 }
