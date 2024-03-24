@@ -27,7 +27,18 @@ fn main() {
     print_user_info(&user2);
 
     calc_rectangle();
+
+    let ip_addr_v4 = IpAddrKind::V4;
+    let ip_addr_v6 = IpAddrKind::V6;
+    println!("ip_address_v4: {:?}", ip_addr_v4);
+    println!("ip_address_v6: {:?}", ip_addr_v6);
+    let localhost_v4 = IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1));
+    let localhost_v6 = IpAddr::V6(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1));
+    println!("std: ip_address_v4: {}", localhost_v4);
+    println!("std: ip_address_v6: {}", localhost_v6);
 }
+
+use std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
 
 fn print_month(index: usize) {
     let months = [
@@ -70,6 +81,8 @@ fn print_user_info(user: &User) {
     );
 }
 
+/// ## Rectangle size props
+/// param
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -118,4 +131,11 @@ fn calc_rectangle() {
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
     println!("Create square: {:?}", Rectangle::square(25));
+}
+
+#[derive(Debug)]
+#[deprecated(since = "0.1.0", note = "use std::net::{IpAddr, Ipv4Addr, Ipv6Addr}")]
+enum IpAddrKind {
+    V4,
+    V6,
 }
