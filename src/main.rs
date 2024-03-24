@@ -32,6 +32,15 @@ fn main() {
     let localhost_v6 = IpAddr::V6(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1));
     println!("std: ip_address_v4: {}", localhost_v4);
     println!("std: ip_address_v6: {}", localhost_v6);
+
+    let message_quit = Message::Quit;
+    message_quit.call();
+    let message_move = Message::Move { x: 3, y: 4 };
+    message_move.call();
+    let message_write = Message::Write(String::from("hello"));
+    message_write.call();
+    let message_change_color = Message::ChangeColor(1, 2, 3);
+    message_change_color.call();
 }
 
 use std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
@@ -127,4 +136,20 @@ fn calc_rectangle() {
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
     println!("Create square: {:?}", Rectangle::square(25));
+}
+
+#[derive(Debug)]
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+impl Message {
+    fn call(&self) {
+        // method body would be defined here
+        // メソッド本体はここに定義される
+        println!("Message some instance called: {:?}", &self);
+    }
 }
