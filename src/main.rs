@@ -1,5 +1,5 @@
 mod simple;
 
 fn main() {
-    simple::option::using_option();
+    simple::array::using_vec();
 }
