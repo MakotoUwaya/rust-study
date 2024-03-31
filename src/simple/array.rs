@@ -17,6 +17,13 @@ pub fn print_month(index: usize) {
     println!("{}", months[index])
 }
 
+#[derive(Debug)]
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
 #[allow(dead_code)]
 pub fn using_vec() {
     let mut vec = Vec::new();
@@ -46,4 +53,12 @@ pub fn using_vec() {
         // println!("{}", i);
     }
     println!("{:?}", v);
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+        SpreadsheetCell::Int(4),
+    ];
+    println!("{:?}", row);
 }
