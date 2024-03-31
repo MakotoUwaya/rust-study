@@ -4,4 +4,5 @@ pub mod ip_addr;
 pub mod message;
 pub mod option;
 pub mod rectangle;
+pub mod string;
 pub mod user;
