@@ -1,5 +1,5 @@
 mod simple;
 
 fn main() {
-    simple::string::using_string();
+    simple::hash_map::using_hash_map();
 }

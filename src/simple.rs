@@ -1,5 +1,6 @@
 pub mod array;
 pub mod guess_number;
+pub mod hash_map;
 pub mod ip_addr;
 pub mod message;
 pub mod option;
