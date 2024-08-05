@@ -17,6 +17,7 @@ pub fn print_month(index: usize) {
     println!("{}", months[index])
 }
 
+#[allow(dead_code)]
 #[derive(Debug)]
 enum SpreadsheetCell {
     Int(i32),
